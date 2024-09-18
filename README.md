@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Manipulando endereço com cep
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Sumário
 
-## Available Scripts
+1. [Objetivo](#objetivo)
+2. [Como utilizar](#como-utilizar)
+3. [Observações de utilização](#observações-de-utilização)
 
-In the project directory, you can run:
+## Objetivo
 
-### `npm start`
+Projeto criado para estudo do useState do react no qual, ao digitar o cep, o mesmo será atualizado na página como um todo e quando estiver com exatos 8 caracteres será realizada a busca do endereço, na API ViaCep.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Como utilizar
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Para utilizar essa aplicação, faça a clonagem deste repositório e tenha instalado o Node na máquina que será utilizada.
 
-### `npm test`
+**Nota**: Durante o desenvolvimento, foi utilizado o Node 20.11.0, é recomendado utilizar a mesma versão para testar.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Com isso feito, entre na pasta e rode os seguintes comandos:
 
-### `npm run build`
+1. Comando para instalação dos pacotes utilizados pela aplicação.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```cmd
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Comando para iniciar a aplicação.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```cmd
+npm start
+```
 
-### `npm run eject`
+Dessa forma, assim que finalizar a instalação e a inicialização da aplicação, poderá acessar a página http://localhost:3000 e utilizá-la.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Observações de utilização
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Ao abrir a página, a seguinte interface será apresentada:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Pagina inicial da aplicação](./docs/pagina-inicial-da-aplicacao.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Nessa interface, pode ser visualizado que possui o campo "Digite o cep" e alguns espaços abaixo dele escrito "CEP", "Rua", "Bairro", "Cidade" e "Estado". O espaço "CEP" será alterado para o valor correspondente conforme digita no campo. Os outros espaços serão alterados quando o cep chegar a 8 dígitos.
 
-## Learn More
+Quando for digitar o CEP você pode digitar somente números, com ponto e, ou, com traço, o sistema reconhece e faz o tratamento adequado para todos os casos. Na apresentação do CEP será mostrado assim como foi digitado.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Exemplo de preenchimento](./docs/exemplo-preenchimento.png)
