@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+.campo {
+  display: block;
+  width: 300px;
+}
+
+.campo label {
+  display: block;
+}
+
+.campo input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+  outline: none;
+}
+
+.resultado {
+  list-style-type: none;
+  padding: 20px;
+  margin: 0;
+}

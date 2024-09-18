@@ -5,12 +5,14 @@ function App() {
   const [endereco, setEndereco] = useState({});
 
   function manipularEndereco(evento) {
-    const cep = evento.target.value;
-    setEndereco({ cep });
+    const cepDigitado = evento.target.value;
+    setEndereco({ cep: cepDigitado });
 
-    if (cep && cep.length === 8) {
+    const cepParaBusca = cepDigitado.replaceAll(".", "").replaceAll("-", "");
+
+    if (cepParaBusca && cepParaBusca.length === 8) {
       // Obter endereço
-      fetch(`https://viacep.com.br/ws/${cep}/json/`)
+      fetch(`https://viacep.com.br/ws/${cepParaBusca}/json/`)
         .then((resposta) => resposta.json())
         .then((dados) => {
           setEndereco((enderecoAntigo) => ({
@@ -27,16 +29,16 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div>
-          <label>Digite o cep:</label>
-          <input placeholder="00000000" onChange={(evento) => manipularEndereco(evento)}/>
+        <div className="campo">
+          <label>Digite o cep</label>
+          <input placeholder="00000-000" onChange={(evento) => manipularEndereco(evento)}/>
         </div>
-        <ul>
-          <li>CEP: {endereco.cep}</li>
-          <li>Rua: {endereco.rua}</li>
-          <li>Bairro: {endereco.bairro}</li>
-          <li>Cidade: {endereco.cidade}</li>
-          <li>Estado: {endereco.estado}</li>
+        <ul className="resultado">
+          <li>CEP: {endereco.cep || "-"}</li>
+          <li>Rua: {endereco.rua || "-"}</li>
+          <li>Bairro: {endereco.bairro || "-"}</li>
+          <li>Cidade: {endereco.cidade || "-"}</li>
+          <li>Estado: {endereco.estado || "-"}</li>
         </ul>
       </header>
     </div>
